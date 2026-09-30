@@ -1,0 +1,62 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "mingw-base",
+      "hidden": true,
+      "generator": "Ninja",
+      "environment": {
+        "PATH": "D:/Qt_Develop_Tool/6.11.2/mingw_64/bin;D:/Qt_Develop_Tool/Tools/mingw1310_64/bin;D:/Qt_Develop_Tool/Tools/Ninja;D:/Qt_Develop_Tool/Tools/CMake_64/bin;$penv{PATH}"
+      },
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "D:/Qt_Develop_Tool/Tools/mingw1310_64/bin/g++.exe",
+        "CMAKE_MAKE_PROGRAM": "D:/Qt_Develop_Tool/Tools/Ninja/ninja.exe",
+        "CMAKE_PREFIX_PATH": "D:/Qt_Develop_Tool/6.11.2/mingw_64",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      },
+      "vendor": {
+        "qt-cpp": {
+          "VSCODE_QT_INSTALLATION": "D:/Qt_Develop_Tool/6.11.2/mingw_64",
+          "VSCODE_QT_QTPATHS_EXE": "D:/Qt_Develop_Tool/6.11.2/mingw_64/bin/qtpaths.exe"
+        }
+      }
+    },
+    {
+      "name": "mingw-debug",
+      "displayName": "MinGW 13.1.0 64-bit Debug",
+      "description": "Qt 6.11.2 + MinGW，调试构建",
+      "inherits": "mingw-base",
+      "binaryDir": "${sourceDir}/build/mingw-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "mingw-release",
+      "displayName": "MinGW 13.1.0 64-bit Release",
+      "description": "Qt 6.11.2 + MinGW，发布构建",
+      "inherits": "mingw-base",
+      "binaryDir": "${sourceDir}/build/mingw-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "mingw-debug",
+      "displayName": "Build Debug",
+      "configurePreset": "mingw-debug"
+    },
+    {
+      "name": "mingw-release",
+      "displayName": "Build Release",
+      "configurePreset": "mingw-release"
+    }
+  ]
+}

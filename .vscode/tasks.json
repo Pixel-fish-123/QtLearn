@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "options": {
+    "env": {
+      "Path": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\bin;D:\\Qt_Develop_Tool\\Tools\\mingw1310_64\\bin;D:\\Qt_Develop_Tool\\Tools\\Ninja;D:\\Qt_Develop_Tool\\Tools\\CMake_64\\bin;${env:Path}"
+    }
+  },
+  "tasks": [
+    {
+      "label": "build",
+      "type": "process",
+      "command": "D:\\Qt_Develop_Tool\\Tools\\CMake_64\\bin\\cmake.exe",
+      "args": [
+        "--build",
+        "--preset",
+        "mingw-debug"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$gcc",
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "silent",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "run",
+      "type": "process",
+      "command": "${workspaceFolder}\\build\\mingw-debug\\QtLearn.exe",
+      "dependsOn": "build",
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "Path": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\bin;D:\\Qt_Develop_Tool\\Tools\\mingw1310_64\\bin;${env:Path}",
+          "QT_PLUGIN_PATH": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\plugins",
+          "QT_QPA_PLATFORM_PLUGIN_PATH": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\plugins\\platforms"
+        }
+      },
+      "presentation": {
+        "clear": true,
+        "echo": false,
+        "focus": false,
+        "panel": "shared",
+        "reveal": "never",
+        "showReuseMessage": false
+      }
+    }
+  ]
+}
