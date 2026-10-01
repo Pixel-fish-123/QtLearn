@@ -11,7 +11,9 @@
       "hidden": true,
       "generator": "Ninja",
       "environment": {
-        "PATH": "D:/Qt_Develop_Tool/6.11.2/mingw_64/bin;D:/Qt_Develop_Tool/Tools/mingw1310_64/bin;D:/Qt_Develop_Tool/Tools/Ninja;D:/Qt_Develop_Tool/Tools/CMake_64/bin;$penv{PATH}"
+        "PATH": "D:/Qt_Develop_Tool/6.11.2/mingw_64/bin;D:/Qt_Develop_Tool/Tools/mingw1310_64/bin;D:/Qt_Develop_Tool/Tools/Ninja;D:/Qt_Develop_Tool/Tools/CMake_64/bin;$penv{PATH}",
+        "QT_PLUGIN_PATH": "D:/Qt_Develop_Tool/6.11.2/mingw_64/plugins",
+        "QT_QPA_PLATFORM_PLUGIN_PATH": "D:/Qt_Develop_Tool/6.11.2/mingw_64/plugins/platforms"
       },
       "cacheVariables": {
         "CMAKE_CXX_COMPILER": "D:/Qt_Develop_Tool/Tools/mingw1310_64/bin/g++.exe",
@@ -29,7 +31,7 @@
     {
       "name": "mingw-debug",
       "displayName": "MinGW 13.1.0 64-bit Debug",
-      "description": "Qt 6.11.2 + MinGW，调试构建",
+      "description": "Qt 6.11.2 + MinGW，调试构建（日常开发用这个）",
       "inherits": "mingw-base",
       "binaryDir": "${sourceDir}/build/mingw-debug",
       "cacheVariables": {
@@ -39,7 +41,7 @@
     {
       "name": "mingw-release",
       "displayName": "MinGW 13.1.0 64-bit Release",
-      "description": "Qt 6.11.2 + MinGW，发布构建",
+      "description": "Qt 6.11.2 + MinGW，发布构建（打包给别人的用这个）",
       "inherits": "mingw-base",
       "binaryDir": "${sourceDir}/build/mingw-release",
       "cacheVariables": {

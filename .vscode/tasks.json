@@ -1,24 +1,12 @@
 {
   "version": "2.0.0",
-  "options": {
-    "env": {
-      "Path": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\bin;D:\\Qt_Develop_Tool\\Tools\\mingw1310_64\\bin;D:\\Qt_Develop_Tool\\Tools\\Ninja;D:\\Qt_Develop_Tool\\Tools\\CMake_64\\bin;${env:Path}"
-    }
-  },
   "tasks": [
     {
       "label": "build",
       "type": "process",
       "command": "D:\\Qt_Develop_Tool\\Tools\\CMake_64\\bin\\cmake.exe",
-      "args": [
-        "--build",
-        "--preset",
-        "mingw-debug"
-      ],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
+      "args": ["--build", "--preset", "mingw-debug"],
+      "group": { "kind": "build", "isDefault": true },
       "problemMatcher": "$gcc",
       "presentation": {
         "clear": true,
@@ -30,6 +18,14 @@
       }
     },
     {
+      "label": "build-release",
+      "type": "process",
+      "command": "D:\\Qt_Develop_Tool\\Tools\\CMake_64\\bin\\cmake.exe",
+      "args": ["--preset", "mingw-release"],
+      "problemMatcher": "$gcc",
+      "presentation": { "clear": true, "panel": "shared" }
+    },
+    {
       "label": "run",
       "type": "process",
       "command": "${workspaceFolder}\\build\\mingw-debug\\QtLearn.exe",
@@ -38,7 +34,7 @@
       "options": {
         "cwd": "${workspaceFolder}",
         "env": {
-          "Path": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\bin;D:\\Qt_Develop_Tool\\Tools\\mingw1310_64\\bin;${env:Path}",
+          "PATH": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\bin;D:\\Qt_Develop_Tool\\Tools\\mingw1310_64\\bin;${env:PATH}",
           "QT_PLUGIN_PATH": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\plugins",
           "QT_QPA_PLATFORM_PLUGIN_PATH": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\plugins\\platforms"
         }
@@ -51,6 +47,13 @@
         "reveal": "never",
         "showReuseMessage": false
       }
+    },
+    {
+      "label": "clean-rebuild",
+      "type": "shell",
+      "command": "Remove-Item -Recurse -Force '${workspaceFolder}\\build\\mingw-debug' -EA SilentlyContinue; & 'D:\\Qt_Develop_Tool\\Tools\\CMake_64\\bin\\cmake.exe' --preset mingw-debug; & 'D:\\Qt_Develop_Tool\\Tools\\CMake_64\\bin\\cmake.exe' --build --preset mingw-debug",
+      "problemMatcher": "$gcc",
+      "presentation": { "clear": true, "panel": "shared" }
     }
   ]
 }

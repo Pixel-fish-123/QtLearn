@@ -17,8 +17,8 @@
 *.qm
 .#*
 *.*#
-core
-!core/
+# core dump at the repo root; do not ignore src/core/
+/core
 tags
 .DS_Store
 .directory
@@ -82,3 +82,9 @@ CMakeLists.txt.user*
 .uic/
 /build*/
 /.qtcreator/
+
+# Local tooling backup (original editor config, PATH snapshots)
+/.config-backup/
+
+# File-permission diagnostic reports
+/.acl-recovery/

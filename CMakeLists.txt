@@ -7,9 +7,9 @@ qt_standard_project_setup()
 
 qt_add_executable(QtLearn
     WIN32 MACOSX_BUNDLE
-    main.cpp
-    widget.cpp
-    widget.h
+    src/main.cpp
+    src/widget.cpp
+    src/widget.h
 )
 
 target_link_libraries(QtLearn

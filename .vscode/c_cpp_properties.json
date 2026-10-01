@@ -1,22 +1,26 @@
 {
+  "version": 4,
   "configurations": [
     {
-      "name": "Win32",
+      "name": "Qt-6.11.2-MinGW-64bit",
       "compilerPath": "D:\\Qt_Develop_Tool\\Tools\\mingw1310_64\\bin\\g++.exe",
+      "cStandard": "c17",
       "cppStandard": "c++17",
       "intelliSenseMode": "windows-gcc-x64",
       "includePath": [
         "${workspaceFolder}/**",
+        "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\include",
         "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\include\\**"
       ],
       "defines": [
         "QT_CORE_LIB",
         "QT_GUI_LIB",
-        "QT_WIDGETS_LIB"
+        "QT_WIDGETS_LIB",
+        "UNICODE",
+        "_UNICODE"
       ],
       "compileCommands": "${workspaceFolder}/build/mingw-debug/compile_commands.json",
       "configurationProvider": "ms-vscode.cmake-tools"
     }
-  ],
-  "version": 4
+  ]
 }

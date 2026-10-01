@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug QtLearn",
+      "name": "Debug QtLearn (mingw-debug)",
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}\\build\\mingw-debug\\QtLearn.exe",
@@ -32,8 +32,40 @@
           "description": "Enable pretty-printing for gdb",
           "text": "-enable-pretty-printing",
           "ignoreFailures": true
+        },
+        {
+          "description": "Skip libstdc++ internals while stepping",
+          "text": "-interpreter-exec console \"skip -gfi *libstdc++*\"",
+          "ignoreFailures": true
         }
       ]
+    },
+    {
+      "name": "Release QtLearn (mingw-release)",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}\\build\\mingw-release\\QtLearn.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [
+        {
+          "name": "PATH",
+          "value": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\bin;D:\\Qt_Develop_Tool\\Tools\\mingw1310_64\\bin;${env:PATH}"
+        },
+        {
+          "name": "QT_PLUGIN_PATH",
+          "value": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\plugins"
+        },
+        {
+          "name": "QT_QPA_PLATFORM_PLUGIN_PATH",
+          "value": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\plugins\\platforms"
+        }
+      ],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "D:\\Qt_Develop_Tool\\Tools\\mingw1310_64\\bin\\gdb.exe",
+      "preLaunchTask": "build-release"
     }
   ]
 }

@@ -3,13 +3,32 @@
   "cmake.useCMakePresets": "always",
   "cmake.configurePreset": "mingw-debug",
   "cmake.buildPreset": "mingw-debug",
-  "cmake.configureOnOpen": true,
+  "cmake.configureOnOpen": false,
+  "cmake.envPath": {
+    "PATH": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\bin;D:\\Qt_Develop_Tool\\Tools\\mingw1310_64\\bin;D:\\Qt_Develop_Tool\\Tools\\Ninja;D:\\Qt_Develop_Tool\\Tools\\CMake_64\\bin;${env:PATH}",
+    "QT_PLUGIN_PATH": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\plugins",
+    "QT_QPA_PLATFORM_PLUGIN_PATH": "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\plugins\\platforms"
+  },
+  "cmake.options.statusBarVisibility": "visible",
+  "qt-core.qtInstallationRoot": "D:\\Qt_Develop_Tool",
+  "qt-core.additionalQtPaths": [
+    "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\bin\\qtpaths.exe"
+  ],
   "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
   "C_Cpp.default.compilerPath": "D:\\Qt_Develop_Tool\\Tools\\mingw1310_64\\bin\\g++.exe",
   "C_Cpp.default.intelliSenseMode": "windows-gcc-x64",
   "C_Cpp.default.cppStandard": "c++17",
-  "qt-core.qtInstallationRoot": "D:\\Qt_Develop_Tool",
-  "qt-core.additionalQtPaths": [
-    "D:\\Qt_Develop_Tool\\6.11.2\\mingw_64\\bin\\qtpaths.exe"
-  ]
+  "C_Cpp.intelliSenseEngineFallback": "enabled",
+  "C_Cpp.errorSquiggles": "enabled",
+  "files.associations": {
+    "*.ui": "xml",
+    "*.qrc": "xml",
+    "*.pro": "makefile",
+    "*.qml": "qml"
+  },
+  "search.exclude": {
+    "**/build/**": true,
+    "**/.config-backup/**": true,
+    "**/.acl-recovery/**": true
+  }
 }
